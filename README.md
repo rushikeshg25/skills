@@ -14,3 +14,7 @@ npx skills@latest add rushikeshg25/skills
 
 Each skill lives in its own folder under `skills/` and contains a `SKILL.md` file.
 
+## Available skills
+
+- `history-skill` — reconstruct and maintain evidence-backed histories and timelines.
+- `lets-build-together` — turn an idea into verified, feedback-sized increments with the user.

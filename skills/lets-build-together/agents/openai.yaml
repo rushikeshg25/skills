@@ -1,0 +1,4 @@
+interface:
+  display_name: "Let’s Build Together"
+  short_description: "Turn an idea into tested increments together"
+  default_prompt: "Use $lets-build-together to turn my idea into a working implementation with me."

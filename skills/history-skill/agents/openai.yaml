@@ -1,0 +1,4 @@
+interface:
+  display_name: "History"
+  short_description: "Build trustworthy histories from source evidence"
+  default_prompt: "Use $history-skill to reconstruct an evidence-backed history of this project."
