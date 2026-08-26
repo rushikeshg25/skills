@@ -1,4 +1,4 @@
-# [Project or Feature] — Build Together
+# [Project or Feature]: Build Together
 
 > Updated: [YYYY-MM-DD]
 

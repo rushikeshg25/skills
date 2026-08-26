@@ -10,7 +10,7 @@
 
 ## Timeline
 
-### [YYYY-MM-DD or date range] — [Event title]
+### [YYYY-MM-DD or date range]: [Event title]
 
 - **What happened:** [Concise factual account]
 - **Why it mattered:** [Impact or consequence]
