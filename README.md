@@ -1,6 +1,6 @@
 # Skills
 
-A collection of reusable agent skills by Rushikesh Ghotekar.
+A collection of reusable agent skills by Rushikesh
 
 ## Installation
 
