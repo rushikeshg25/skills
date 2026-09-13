@@ -1,6 +1,8 @@
 ---
 name: history-skill
 description: Reconstruct and maintain an evidence-backed history of a project, decision, incident, or body of work. Use when the user asks for a history, chronology, timeline, retrospective record, or an update to an existing history document.
+metadata:
+  author: rushikesh
 ---
 
 # History

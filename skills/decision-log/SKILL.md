@@ -2,6 +2,8 @@
 name: decision-log
 description: Use proactively, without being asked, for any nontrivial coding, debugging, refactoring, or other development task in this project, and keep using it until the task is done. Maintains an append-only, dated decision log at logs/YYYY-MM-DD.md, adding a short entry after each design choice, choice between approaches, bug fix strategy, or blocker, with the alternatives passed over and why. Skip trivial questions and edits that involve no real decision.
 allowed-tools: Bash(bash ${CLAUDE_SKILL_DIR}/scripts/log-entry.sh *)
+metadata:
+  author: rushikesh
 ---
 
 # Decision Log
