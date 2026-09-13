@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learn It Myself"
+  short_description: "Learn a concept by implementing it with a tutor"
+  default_prompt: "Use $learn-it-myself to teach me this concept while I implement it myself."
