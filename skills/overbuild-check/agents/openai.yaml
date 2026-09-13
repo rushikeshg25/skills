@@ -1,0 +1,4 @@
+interface:
+  display_name: "Overbuild Check"
+  short_description: "Pressure-test infra plans for cost, need, and exit"
+  default_prompt: "Use $overbuild-check to check whether this architecture is worth building."
