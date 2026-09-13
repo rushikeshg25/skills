@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pipeline Forensics"
+  short_description: "Trace a record through a data pipeline to find where it broke"
+  default_prompt: "Use $pipeline-forensics to find where this record goes missing or stale in the pipeline."
