@@ -35,6 +35,9 @@ Each skill lives in its own folder under `skills/` and contains a `SKILL.md` fil
 - `history-skill`: reconstruct and maintain evidence-backed histories and timelines.
 - `lets-build-together`: turn an idea into verified, feedback-sized increments with the user.
 - `decision-log`: keep an append-only, dated log of decisions, alternatives, and blockers while working.
+- `pipeline-forensics`: trace one record through a CDC, Kafka, or ETL pipeline to find the first hop where it goes missing or stale.
+- `learn-it-myself`: learn a concept by implementing it yourself while the agent explains, sets checks, and reviews.
+- `overbuild-check`: pressure-test an infrastructure-heavy plan for need, cost, a measurable outcome, and kill criteria before building it.
 
 ## Setting up decision-log
 
