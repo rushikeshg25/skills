@@ -1,6 +1,8 @@
 ---
 name: lets-build-together
 description: Collaboratively turn an early idea into a working, verified implementation through small feedback-driven increments. Use when the user says “let’s build,” wants to shape a solution together, or asks to remain involved in design and implementation decisions; do not use for ordinary requests that clearly ask for autonomous execution.
+metadata:
+  author: rushikesh
 ---
 
 # Let's Build Together
