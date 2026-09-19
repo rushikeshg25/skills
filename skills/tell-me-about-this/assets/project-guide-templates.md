@@ -25,11 +25,19 @@ One skeleton per output file. Copy the matching section into `docs/project-guide
 
 [Prerequisites and required environment variables, named but never valued.]
 
-## Where to start reading
+## The five-file tour
 
-[The one file a newcomer should open first, and why.]
+The shortest path to a working mental model. Read these source files in this order.
 
-## Reading order
+| # | File | Why this one | Then look at |
+| --- | --- | --- | --- |
+| 1 | [`path/to/entry.ext`](../../path/to/entry.ext) | [The entry point: where the process starts.] | [02-flow.md](02-flow.md#startup) |
+| 2 | [`path/to/file.ext`](../../path/to/file.ext) | [What it establishes for everything after it.] | [01-architecture.md](01-architecture.md#components) |
+| 3 | [`path/to/file.ext`](../../path/to/file.ext) | [Why it is next.] | [03-structure.md](03-structure.md) |
+| 4 | [`path/to/file.ext`](../../path/to/file.ext) | [Why it is next.] | [05-decisions.md](05-decisions.md) |
+| 5 | [`path/to/file.ext`](../../path/to/file.ext) | [What it ties together.] | [02-flow.md](02-flow.md) |
+
+## Reading order for this guide
 
 1. [01-architecture.md](01-architecture.md) — the shape of the system.
 2. [02-flow.md](02-flow.md) — what happens when it runs.
@@ -61,7 +69,7 @@ One skeleton per output file. Copy the matching section into `docs/project-guide
 
 | Component | Responsibility | Lives in | Talks to |
 | --- | --- | --- | --- |
-| [Name] | [What it owns] | [path/] | [Other components] |
+| [Name] | [What it owns] | [`path/`](03-structure.md#folder) | [Other components] |
 
 ## Boundaries and contracts
 
@@ -108,8 +116,8 @@ One skeleton per output file. Copy the matching section into `docs/project-guide
 [flowchart or sequenceDiagram of this flow.]
 ```
 
-1. **[Step]** — [What happens and why.] `path/to/file.ext:line`
-2. **[Step]** — [What happens and why.] `path/to/file.ext:line`
+1. **[Step]** — [What happens and why.] [`file.ext:line`](../../path/to/file.ext) · [structure](03-structure.md#folder)
+2. **[Step]** — [What happens and why.] [`file.ext:line`](../../path/to/file.ext) · [structure](03-structure.md#folder)
 
 [Where it can branch, short-circuit, or error out.]
 
@@ -119,7 +127,7 @@ One skeleton per output file. Copy the matching section into `docs/project-guide
 [Bootstrap sequence from process start to ready.]
 ```
 
-1. **[Step]** — [Config loaded, connections opened, routes registered.] `path:line`
+1. **[Step]** — [Config loaded, connections opened, routes registered.] [`file.ext:line`](../../path/to/file.ext) · [structure](03-structure.md#folder)
 
 ## [Other significant flow, e.g. auth, background job, build]
 
@@ -127,7 +135,7 @@ One skeleton per output file. Copy the matching section into `docs/project-guide
 [Diagram.]
 ```
 
-1. **[Step]** — [What happens.] `path:line`
+1. **[Step]** — [What happens.] [`file.ext:line`](../../path/to/file.ext) · [structure](03-structure.md#folder)
 ````
 
 ---
