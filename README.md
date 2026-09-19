@@ -38,6 +38,7 @@ Each skill lives in its own folder under `skills/` and contains a `SKILL.md` fil
 - `pipeline-forensics`: trace one record through a CDC, Kafka, or ETL pipeline to find the first hop where it goes missing or stale.
 - `learn-it-myself`: learn a concept by implementing it yourself while the agent explains, sets checks, and reviews.
 - `overbuild-check`: pressure-test an infrastructure-heavy plan for need, cost, a measurable outcome, and kill criteria before building it.
+- `tell-me-about-this`: explore a codebase and write a lasting project guide covering flow, structure, stack, architecture, and decisions. Run it yourself with `/tell-me-about-this`; the agent never triggers it on its own.
 
 ## Setting up decision-log
 
