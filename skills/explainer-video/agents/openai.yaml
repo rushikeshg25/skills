@@ -1,0 +1,6 @@
+interface:
+  display_name: "Explainer Video"
+  short_description: "Create visual explainer videos with optional narration"
+  default_prompt: "Use $explainer-video to create a short visual explanation of this topic with synchronized narration."
+policy:
+  allow_implicit_invocation: false
