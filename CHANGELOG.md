@@ -15,6 +15,7 @@ User-visible changes to this skill collection. Dates record changes on `main` in
 - A getting-started guide with example prompts, installation updates, decision-log setup, and troubleshooting.
 - Contributor guidance and a PR template covering invocation controls, verification, and changelog maintenance.
 - A local validator and regression tests for skill metadata, invocation consistency, README coverage, and local Markdown links.
+- A GitHub Actions workflow that runs validation and regression tests on pull requests and pushes to `main`.
 
 ### Fixed
 

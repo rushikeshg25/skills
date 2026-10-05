@@ -90,6 +90,7 @@ The repository provides instructions, templates, and a decision-log helper. It d
 
 - [Changelog](CHANGELOG.md): additions, behavior changes, and rename migration notes.
 - [Contributing](CONTRIBUTING.md): skill conventions, validation, and changelog maintenance.
+- [Automated checks](.github/workflows/validate.yml): validate all skills and documentation links on pull requests.
 - [Skill source](skills/): one folder per skill, with supporting files only where needed.
 - [MIT license](LICENSE): use and adapt the collection under its terms.
 

@@ -45,6 +45,8 @@ git diff --check
 
 The validator checks metadata, invocation consistency, README coverage, and local inline Markdown link targets. It ignores example code blocks and does not check remote URLs or heading fragments. Its purpose is repository integrity; visual output and model behavior still need task-specific verification. No provider credentials are needed for these checks.
 
+The [GitHub Actions workflow](.github/workflows/validate.yml) runs the same validator and regression tests on pull requests and pushes to `main`, with read-only repository permissions.
+
 When adding a helper script, exercise its observable behavior. When changing a prompt, describe a realistic before/after result instead of asserting that a particular sentence or heading exists.
 
 ## Maintain the changelog
