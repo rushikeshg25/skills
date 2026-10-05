@@ -2,3 +2,5 @@ interface:
   display_name: "Tell Me About This"
   short_description: "Explore a codebase and write a lasting project guide"
   default_prompt: "Use $tell-me-about-this to explore this codebase and write a project guide."
+policy:
+  allow_implicit_invocation: false

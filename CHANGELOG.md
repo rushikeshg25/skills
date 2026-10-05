@@ -14,6 +14,11 @@ User-visible changes to this skill collection. Dates record changes on `main` in
 - This changelog, with linked historical entries and migration guidance for renamed skills.
 - A getting-started guide with example prompts, installation updates, decision-log setup, and troubleshooting.
 - Contributor guidance and a PR template covering invocation controls, verification, and changelog maintenance.
+- A local validator and regression tests for skill metadata, invocation consistency, README coverage, and local Markdown links.
+
+### Fixed
+
+- Set `tell-me-about-this` to user-only invocation in Codex, matching its existing Claude Code setting and documented intent. Invoke it explicitly with `$tell-me-about-this`.
 
 ## 2026-10-05
 
