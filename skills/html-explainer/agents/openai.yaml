@@ -1,0 +1,6 @@
+interface:
+  display_name: "HTML Explainer"
+  short_description: "Build interactive webpages that explain a topic"
+  default_prompt: "Use $html-explainer to explain this topic in an interactive HTML page."
+policy:
+  allow_implicit_invocation: false

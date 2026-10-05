@@ -1,0 +1,6 @@
+interface:
+  display_name: "Add Diagram"
+  short_description: "Add clear diagrams to Markdown or HTML documents"
+  default_prompt: "Use $add-diagram to add an explanatory diagram to this Markdown or HTML document."
+policy:
+  allow_implicit_invocation: false
