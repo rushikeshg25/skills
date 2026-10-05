@@ -6,6 +6,7 @@ User-visible changes to this skill collection. Dates record changes on `main` in
 
 ### Changed
 
+- Reorganize the README around reader goals, with a complete skill catalog, invocation labels, and a shorter installation path.
 - Rename `ste-writing` to **`easy-understanding`** for easier recall. The writing guidance and automatic invocation are unchanged. After updating your installed skills, use `$easy-understanding` in Codex or `/easy-understanding` in Claude Code. The old name is not an alias; remove an old installed `ste-writing` copy if your installer retains it. [PR #4](https://github.com/rushikeshg25/skills/pull/4)
 
 ### Added

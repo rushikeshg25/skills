@@ -1,84 +1,93 @@
 # Skills
 
-A collection of reusable agent skills by Rushikesh
+Reusable agent skills by Rushikesh for understanding code, building with feedback, investigating data problems, and explaining technical ideas.
 
-## Installation
+Each skill handles a specific job. Install the ones you need, read their instructions, and adapt them to your workflow. You can use each skill independently.
 
-Install interactively and let the Skills CLI detect your available agent harnesses:
+[Choose a skill](#choose-a-skill) · [Install](#install) · [Invocation](#invocation) · [Changelog](CHANGELOG.md)
+
+## Start here
+
+| What you want to do | Start with |
+| --- | --- |
+| Understand an unfamiliar repository | [`tell-me-about-this`](skills/tell-me-about-this/SKILL.md) |
+| Shape and build an idea with the agent | [`lets-build-together`](skills/lets-build-together/SKILL.md) |
+| Learn by writing the core logic yourself | [`learn-it-myself`](skills/learn-it-myself/SKILL.md) |
+| Find where data went missing or stale | [`pipeline-forensics`](skills/pipeline-forensics/SKILL.md) |
+| Make a technical explanation easier to read | [`easy-understanding`](skills/easy-understanding/SKILL.md) |
+
+## Install
+
+Choose skills and let the installer detect your agent:
 
 ```bash
 npx skills@latest add rushikeshg25/skills
 ```
 
-Install all skills for Claude Code:
+Or install one skill for a specific agent:
 
 ```bash
-npx skills@latest add rushikeshg25/skills --agent claude-code --skill '*'
+npx skills@latest add rushikeshg25/skills --agent codex --skill easy-understanding
 ```
 
-Install all skills for every harness supported by the CLI:
+Replace `codex` with `claude-code` for Claude Code. Add `-g` for a user-wide installation instead of a project installation. The installer requires Node.js and npm; the skills themselves do not require a Node.js runtime unless their task needs one.
 
-```bash
-npx skills@latest add rushikeshg25/skills --all
-```
+## Choose a skill
 
-## Compatibility
+**Model-invoked** means the agent may select the skill when the request fits. You can also invoke it explicitly. **User-invoked** means you choose when it runs.
 
-The shared `SKILL.md` instructions and bundled templates follow the portable Agent Skills layout used by Claude Code, Codex, and other compatible harnesses. The optional `agents/openai.yaml` files add OpenAI-specific interface metadata and can be ignored safely by other harnesses.
+### Understand and build
 
-## Structure
-
-Each skill lives in its own folder under `skills/` and contains a `SKILL.md` file.
-
-## Available skills
-
-- `history-skill`: reconstruct and maintain evidence-backed histories and timelines.
-- `lets-build-together`: turn an idea into verified, feedback-sized increments with the user.
-- `decision-log`: keep an append-only, dated log of decisions, alternatives, and blockers while working.
-- `pipeline-forensics`: trace one record through a CDC, Kafka, or ETL pipeline to find the first hop where it goes missing or stale.
-- `learn-it-myself`: learn a concept by implementing it yourself while the agent explains, sets checks, and reviews.
-- `overbuild-check`: pressure-test an infrastructure-heavy plan for need, cost, a measurable outcome, and kill criteria before building it.
-- `tell-me-about-this`: explore a codebase and write a lasting project guide covering flow, structure, stack, architecture, and decisions. Run it yourself with `/tell-me-about-this`; the agent never triggers it on its own.
-- [`easy-understanding`](skills/easy-understanding/SKILL.md): explain technical concepts and procedures in clear, ASD-STE100-inspired English. The model can select this skill automatically; the default is a practical style, not a claim of formal compliance.
-- [`html-explainer`](skills/html-explainer/SKILL.md): create an interactive HTML page that teaches a topic through visuals and meaningful controls. User invoked.
-- [`add-diagram`](skills/add-diagram/SKILL.md): add a diagram to Markdown or HTML while preserving the document and matching its renderer. User invoked.
-- [`explainer-video`](skills/explainer-video/SKILL.md): create a rendered video with editable source, a transcript, and optional synchronized narration using a configured provider or available local speech tools. User invoked.
-
-## Explanation skills
-
-Choose the output that helps the reader understand the subject. These skills can work independently; none requires the others to be installed.
-
-| Skill | Invocation | Example request |
+| Skill | Use it to | Invocation |
 | --- | --- | --- |
-| `easy-understanding` | Automatic for technical explanations, or explicit | “Explain replication lag in practical simplified technical English.” |
-| `html-explainer` | User only | “Use $html-explainer to explain compound interest with an adjustable rate.” |
-| `add-diagram` | User only | “Use $add-diagram to add the retry sequence to docs/design.md.” |
-| `explainer-video` | User only | “Use $explainer-video to make a 90-second visual explanation of the dot product with local narration.” |
+| [`tell-me-about-this`](skills/tell-me-about-this/SKILL.md) | Produce a linked codebase guide covering runtime flow, architecture, files, and decisions. | User |
+| [`lets-build-together`](skills/lets-build-together/SKILL.md) | Turn an idea into verified increments while staying involved in decisions. | Model or user |
+| [`learn-it-myself`](skills/learn-it-myself/SKILL.md) | Learn a concept by implementing the core logic yourself, with tutoring and checks. | Model or user |
+| [`overbuild-check`](skills/overbuild-check/SKILL.md) | Assess an infrastructure plan's need, cost, success measure, and stopping criteria. | Model or user |
+| [`pipeline-forensics`](skills/pipeline-forensics/SKILL.md) | Trace one record across a data pipeline to locate the first incorrect hop. | Model or user |
 
-In Codex, invoke a skill with `$skill-name`; in Claude Code, use `/skill-name`. The three user-only skills set both Claude Code's `disable-model-invocation: true` and Codex's `policy.allow_implicit_invocation: false`. Other harnesses may handle invocation controls differently.
+### Explain and visualize
 
-Writing and document instructions do not require a particular renderer. HTML and diagram visual checks need a compatible preview tool. Video production needs a working renderer and encoder; narration additionally needs a speech engine or an authorized provider. The skills direct the agent to inspect what is available and report incomplete outputs accurately.
+| Skill | Output | Invocation |
+| --- | --- | --- |
+| [`easy-understanding`](skills/easy-understanding/SKILL.md) | Clear technical prose inspired by ASD-STE100, with meaning and qualifications preserved. | Model or user |
+| [`html-explainer`](skills/html-explainer/SKILL.md) | An HTML page with visuals and interactions that explain a topic. | User |
+| [`add-diagram`](skills/add-diagram/SKILL.md) | A diagram integrated into an existing Markdown or HTML document. | User |
+| [`explainer-video`](skills/explainer-video/SKILL.md) | A rendered video, editable source, transcript, and optional synchronized narration. | User |
 
-## Setting up decision-log
+Choose prose for a direct explanation, a diagram for relationships, HTML for exploration, and video for a paced visual lesson. The writing skill uses a practical simplified style; it does not certify ASD-STE100 compliance.
 
-`decision-log` is meant to run on its own during development work, so the agent has to be able to find it. Agents do not read this repository or any index file to discover skills. Claude Code finds skills by location, `.claude/skills/` in a project or `~/.claude/skills/` for your user, and shows the model each skill's name and description so it can decide when to load one.
+### Keep a useful record
 
-1. Install the skill into the project you want logged:
+| Skill | Output | Invocation |
+| --- | --- | --- |
+| [`decision-log`](skills/decision-log/SKILL.md) | A local, append-only log of decisions, alternatives, and blockers during development. | Model or user |
+| [`history-skill`](skills/history-skill/SKILL.md) | An evidence-backed history reconstructed from source material. | Model or user |
 
-   ```bash
-   npx skills@latest add rushikeshg25/skills --agent claude-code --skill decision-log
-   ```
+## Invocation
 
-   Add `-g` to install it for all your projects. Omit `--agent` to pick other harnesses interactively.
+In **Codex**, use `$skill-name`. In **Claude Code**, use `/skill-name`:
 
-2. Tell the agent to use it on every nontrivial task. The skill description already asks for proactive use, but a standing instruction makes it reliable. Add this to the project's `CLAUDE.md` (or `~/.claude/CLAUDE.md` for a global install, or `AGENTS.md` for Codex and other harnesses):
+```text
+Use $html-explainer to explain compound interest with an adjustable interest rate.
+```
 
-   ```markdown
-   ## Decision log
+```text
+/add-diagram Add the retry sequence to docs/design.md.
+```
 
-   During any nontrivial coding, debugging, or refactoring task, use the `decision-log` skill: append an entry to `logs/YYYY-MM-DD.md` after each design choice, choice between approaches, bug fix strategy, or blocker.
-   ```
+Automatic selection depends on the agent and the request; it does not guarantee that a skill runs on every turn. To make `decision-log` a standing practice, install it and add its instruction to the project's `AGENTS.md` or `CLAUDE.md`.
 
-3. Start a new session and ask for a change that involves a real choice. An entry should appear in `logs/` under today's date. If Claude Code asks for permission to run `scripts/log-entry.sh`, allow it so later entries do not interrupt the work.
+## Compatibility and requirements
 
-4. Decide whether logs belong in version control. The skill never commits log files or edits `.gitignore`, so add `logs/` to `.gitignore` if you want to keep them local.
+Skills use the portable `SKILL.md` layout. Codex reads additional interface and invocation settings from `agents/openai.yaml`; Claude Code uses frontmatter settings in `SKILL.md`. Other harnesses may interpret invocation controls differently.
+
+The repository provides instructions, templates, and a decision-log helper. It does not bundle browser renderers, video encoders, or speech engines. HTML and diagram verification need a compatible preview tool. Video production needs a renderer and encoder; narration also needs local speech tools or an authorized provider.
+
+## Project
+
+- [Changelog](CHANGELOG.md): additions, behavior changes, and rename migration notes.
+- [Skill source](skills/): one folder per skill, with supporting files only where needed.
+- [MIT license](LICENSE): use and adapt the collection under its terms.
+
+The task-focused catalog and explicit invocation labels take inspiration from [Matt Pocock's skills collection](https://github.com/mattpocock/skills).
