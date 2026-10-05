@@ -4,7 +4,7 @@ Reusable agent skills by Rushikesh for understanding code, building with feedbac
 
 Each skill handles a specific job. Install the ones you need, read their instructions, and adapt them to your workflow. You can use each skill independently.
 
-[Choose a skill](#choose-a-skill) · [Install](#install) · [Invocation](#invocation) · [Changelog](CHANGELOG.md)
+[Choose a skill](#choose-a-skill) · [Install](#install) · [Getting started](docs/getting-started.md) · [Changelog](CHANGELOG.md)
 
 ## Start here
 
@@ -31,6 +31,8 @@ npx skills@latest add rushikeshg25/skills --agent codex --skill easy-understandi
 ```
 
 Replace `codex` with `claude-code` for Claude Code. Add `-g` for a user-wide installation instead of a project installation. The installer requires Node.js and npm; the skills themselves do not require a Node.js runtime unless their task needs one.
+
+See [Getting started](docs/getting-started.md) for full-collection installs, example prompts, updates, and troubleshooting.
 
 ## Choose a skill
 
@@ -76,7 +78,7 @@ Use $html-explainer to explain compound interest with an adjustable interest rat
 /add-diagram Add the retry sequence to docs/design.md.
 ```
 
-Automatic selection depends on the agent and the request; it does not guarantee that a skill runs on every turn. To make `decision-log` a standing practice, install it and add its instruction to the project's `AGENTS.md` or `CLAUDE.md`.
+Automatic selection depends on the agent and the request; it does not guarantee that a skill runs on every turn. To make `decision-log` a standing practice, follow its [setup instructions](docs/getting-started.md#make-decision-logging-a-standing-practice).
 
 ## Compatibility and requirements
 

@@ -12,6 +12,7 @@ User-visible changes to this skill collection. Dates record changes on `main` in
 ### Added
 
 - This changelog, with linked historical entries and migration guidance for renamed skills.
+- A getting-started guide with example prompts, installation updates, decision-log setup, and troubleshooting.
 
 ## 2026-10-05
 
