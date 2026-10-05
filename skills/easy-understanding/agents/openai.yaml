@@ -1,0 +1,6 @@
+interface:
+  display_name: "Easy Understanding"
+  short_description: "Explain technical topics in clear, controlled English"
+  default_prompt: "Use $easy-understanding to make this technical explanation clear with a practical ASD-STE100-inspired style."
+policy:
+  allow_implicit_invocation: true
