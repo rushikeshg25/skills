@@ -1,11 +1,11 @@
 ---
-name: ste-writing
+name: easy-understanding
 description: Write clear technical explanations and instructions using an ASD-STE100-inspired controlled style. Use proactively when explaining a technical concept, documenting a procedure, or simplifying dense technical prose. Also use for requests for STE, ASD-STE100, or simplified technical English. Preserve a requested voice; do not apply automatically to creative writing, quotations, or casual conversation.
 metadata:
   author: rushikesh
 ---
 
-# STE Writing
+# Easy Understanding
 
 Make technical writing easy to understand on the first reading. Use the discipline of ASD-STE100 without presenting an approximation as formal compliance.
 
