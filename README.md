@@ -89,6 +89,7 @@ The repository provides instructions, templates, and a decision-log helper. It d
 ## Project
 
 - [Changelog](CHANGELOG.md): additions, behavior changes, and rename migration notes.
+- [Contributing](CONTRIBUTING.md): skill conventions, validation, and changelog maintenance.
 - [Skill source](skills/): one folder per skill, with supporting files only where needed.
 - [MIT license](LICENSE): use and adapt the collection under its terms.
 
