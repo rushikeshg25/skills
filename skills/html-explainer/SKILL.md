@@ -19,6 +19,7 @@ Choose a short narrative: the core idea, a worked example, and the implications.
 ## Build the page
 
 - For a standalone request, deliver one descriptive `.html` file with inline CSS and JavaScript. Prefer system fonts and inline SVG so it opens locally without a build step or network access. When editing an existing site, follow its stack and conventions instead.
+- Prefer a dark theme. Whenever something is not visible in dark (like any chart,etc) then add a button to toggle dark and light theme
 - Establish a deliberate visual hierarchy with readable type, consistent spacing, restrained color, and a focal visual. Adapt the layout to the subject instead of imposing a dashboard or card grid on every explanation.
 - Keep the key explanation readable before JavaScript runs. Use semantic headings, labelled native controls, visible keyboard focus, and sufficient contrast. Do not encode meaning through color alone.
 - Make controls change the model or explanation, not merely their own appearance. Show units, current values, and how to reset or replay. Define valid input ranges and explain simplifications in simulations.
