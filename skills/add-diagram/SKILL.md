@@ -36,12 +36,22 @@ Keep one main question per diagram. Split an overcrowded overview into an overvi
 
 Do not add a JavaScript dependency to a document just to draw a simple static diagram. A raster illustration can help explain a physical object, but exact labels, topology, and quantitative charts should use deterministic drawing tools.
 
+## Optional motion in HTML
+
+Use animation only when requested or when following a route or changing a value answers the diagram's question. Preserve a readable static overview. For a flowchart, highlight the active node and edge without rearranging the whole graph; show the branch condition and current step in text. Use simultaneous highlights for concurrent work rather than inventing an order.
+
+Provide pause/replay for playback and step controls for distinct stages. With `prefers-reduced-motion`, change highlights immediately and retain all steps. Cancel pending animation on reset or a new selection. Keep controls keyboard-operable and essential labels visible without hover.
+
+Markdown renderers may strip scripts and animated SVG features. Keep Markdown diagrams static unless the target's animation support is verified and motion was requested. An optional HTML companion must be explicitly in scope; link it alongside a static diagram rather than replacing the document with a webpage.
+
+For charts, label units and data sources, keep scales consistent across compared states, and distinguish interpolation from actual samples. Motion must not change the meaning of the data.
+
 ## Integrate and check
 
 Place the diagram next to the explanation it supports. Add a concise caption stating what it shows and define non-obvious notation. Use relative asset paths for portable documents. Preserve unrelated text, links, frontmatter, styles, and existing diagrams.
 
 Check every node, edge, arrow direction, branch condition, and boundary against the evidence. Do not imply a sequence with arrows when the source establishes only an association. Use labels or shapes as well as color.
 
-Render in the target environment when available. Inspect clipping, overlapping labels, reading order, contrast, and legibility at the document's expected width. For Mermaid, successful parsing is necessary but does not replace visual inspection. Check that Markdown fences close correctly, asset links resolve, and HTML remains valid after insertion.
+Render in the target environment when available. Inspect clipping, overlapping labels, reading order, contrast, and legibility at the document's expected width. For Mermaid, successful parsing is necessary but does not replace visual inspection. Check that Markdown fences close correctly, asset links resolve, and HTML remains valid after insertion. For animated HTML, also exercise pause, step, replay, reset during playback, rapid selections, and reduced motion. Inspect the static and printed view so the relationship survives without playback.
 
 Deliver the edited document with its required assets and name the inserted diagram. Report any unavailable renderer or unresolved factual assumption precisely. Do not claim visual verification if only source checks ran.
