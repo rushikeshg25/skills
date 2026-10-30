@@ -26,6 +26,16 @@ Use the requested output format. This skill changes the writing, not the scope o
 6. Make references explicit. Replace ambiguous “it,” “this,” or “they” with the object name. Split long noun clusters and avoid idioms, ornamental synonyms, and unexplained abbreviations.
 7. Preserve logic and certainty. Keep negation, exceptions, sequence, quantities, and distinctions such as “must,” “should,” “may,” and “can.” Do not turn correlation into causation or an estimate into a fact.
 
+## Match the shape to the reader's task
+
+For a factual question, give the answer and the necessary qualification. For a mechanism, explain the input, the important state change, and the output; use one small example before adding edge cases. For a procedure, state prerequisites, ordered actions, and the observable result. Do not turn a short answer into a tutorial.
+
+Keep executable commands, API names, configuration keys, quoted text, and numeric precision intact when rewriting prose. Explain them beside the original when necessary. If a command is wrong, identify the correction separately instead of silently changing its behavior during a style edit.
+
+Keep each condition with the action it governs. For example, “Retry only if the request is idempotent and the failure is transient” requires both conditions. Splitting this into independent advice must not make either condition optional.
+
+When the source is ambiguous, preserve the uncertainty or ask the one question that resolves the meaning. Simpler wording must not select a technical interpretation the source does not establish.
+
 ## Check meaning before style
 
 Compare the rewrite with the source or evidence. Can the reader identify who does what, under which conditions, and with what result? Check that simplification did not remove a necessary qualification or add an unsupported claim.
