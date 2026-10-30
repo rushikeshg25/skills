@@ -1,0 +1,4 @@
+interface:
+  display_name: "Safe Schema Change"
+  short_description: "Plan compatible schema changes and bounded backfills"
+  default_prompt: "Use $safe-schema-change to plan this database migration, including compatibility, lock risks, verification, and recovery."
