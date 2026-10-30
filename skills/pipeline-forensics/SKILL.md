@@ -20,8 +20,8 @@ Debug a data pipeline by following one concrete record through every hop, with e
    - Sink write: the actual statement, conflict key, and any version guard.
    - Read path: views, row level security, timezone conversion, caches, materialized views.
 3. **Trace each key hop by hop.** At every hop record when the record was seen, its value or version, and its position (oplog time, LSN, partition and offset). Keep a hop table as you go.
-4. **Find the first divergent hop.** Everything before it is correct and everything after it is a consequence. Match the evidence against [references/failure-modes.md](references/failure-modes.md).
-5. **Confirm the cause.** Find direct evidence, such as two events for one key on different partitions or an offset committed with no matching sink write, or reproduce it in a non-production environment. A plausible story is not a confirmed cause.
+4. **Find the first evidenced divergence.** Compare the same key and logical version at adjacent hops. If a hop lacks evidence, mark it unknown and report the interval where divergence could have occurred; do not claim that everything before it is correct. Match the evidence against [references/failure-modes.md](references/failure-modes.md).
+5. **Confirm the cause.** Find direct evidence of the mechanism, such as a stale event overwriting a newer sink version, or reproduce it in a non-production environment. Events on different partitions and advanced offsets are leads; connect them to the incorrect outcome before naming a cause. A plausible story is not a confirmed cause.
 6. **Report** the hop table, the root cause with its evidence, fix options with tradeoffs, and a detection check so the same failure is caught next time.
 
 ## Hop Table
@@ -31,9 +31,19 @@ Debug a data pipeline by following one concrete record through every hop, with e
 | --- | --- | --- | --- |
 | Source `orders` | `findOne({_id: "A17"})` at 10:02 IST | status=shipped, version=7 | OK |
 | Topic `orders.cdc` | partition 3, offset 48122, 10:02:04 | status=shipped, version=7 | OK |
-| Consumer `reporting-sync` | group committed 48130, no log line for key | not processed | **Diverges** |
+| Consumer `reporting-sync` | partition 3 committed next offset 48130; no retained log for key | processing outcome unknown | **Unknown** |
 | Sink `report.orders` | `SELECT ... WHERE id = 'A17'` | status=packed, version=6 | Stale |
 ```
+
+## Separate missing data from missing evidence
+
+Record the observation time and scope of each probe. Match source version, event identity, partition/offset, transform result, and sink version before comparing values. A current source read can be newer than the captured event; retention or compaction may have removed an older event.
+
+A missing log line does not prove a record was skipped. A committed Kafka offset normally identifies the next record to consume in that partition; it does not independently prove a particular sink transaction succeeded. Check the commit strategy and durable write evidence. Lag reaching zero is also not proof of source/sink equality.
+
+Keep competing explanations explicit, such as capture loss, delayed processing, stale overwrite, or a read filter. Choose the smallest read-only probe that distinguishes them and state what each possible result would imply. Use a narrow key/time window and bounded reads; broaden only when the evidence requires it.
+
+Stop at a confirmed cause or a precisely located evidence gap. The report should identify the missing observation needed to continue instead of upgrading a plausible explanation into a root cause.
 
 ## Report Format
 
