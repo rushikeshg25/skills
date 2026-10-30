@@ -18,6 +18,16 @@ Create a chronology that helps a future reader understand what happened, when it
 5. Write or update the history with the structure in [assets/history-template.md](assets/history-template.md). Adapt the template to the subject and remove sections that add no value.
 6. Verify every material claim against its cited evidence. Check that links, commit IDs, paths, names, dates, and event order are accurate.
 
+## Resolve what each date proves
+
+Record the event type as well as its date: authored, committed, merged, released, deployed, or observed. A commit timestamp establishes a source change, not customer availability. Use merge, release, or deployment evidence for those claims; leave the availability date unknown when that evidence is absent.
+
+For Git histories, inspect the relevant diff and surrounding code rather than treating commit subjects as complete facts. Follow renamed paths when needed. Treat squashed or cherry-picked changes as one logical event when the evidence supports that identity, while retaining the distinct integration dates that matter.
+
+For each turning point, distinguish the recorded rationale at the time from a later interpretation. When accounts disagree, cite both and state the unresolved question. Missing evidence in the searched sources means “not found in these sources,” not “never happened.”
+
+When updating a history, record the evidence cutoff or source revision so the next reader knows what was checked. Keep the search scoped to the subject and time range; summarize irrelevant bulk activity rather than inventing a complete inventory.
+
 ## Working With Existing Histories
 
 Preserve useful prose and the author's voice. Add new events in the appropriate chronological position, reconcile duplicates, and change prior claims only when stronger evidence supports the correction. Make corrections visible when silently rewriting the record could mislead readers.
