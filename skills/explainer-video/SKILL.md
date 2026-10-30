@@ -24,6 +24,16 @@ Keep notation and color meanings stable across scenes. Introduce objects before 
 
 Proceed from the storyboard to production unless the user asked to review the plan first. Use [references/production.md](references/production.md) when choosing rendering and narration tools, timing scenes, and verifying exports.
 
+## Animate charts and processes deliberately
+
+Use motion to show a change, not merely to introduce every object. For a chart, keep series colors, labels, units, and axes stable across compared scenes. If the scale must change, make that change explicit. Identify illustrative data and interpolation; an animated curve does not supply missing measurements.
+
+For a flowchart, establish the full route before following a token or highlighting a node. Label branch conditions. Show concurrent branches together when the mechanism is concurrent. Hold the result long enough to read before moving on.
+
+Derive each frame from a shared scene timeline and the input data. In frame-based renderers, use frame number and frame rate rather than wall-clock timers or unseeded randomness. This lets preview, still frames, and the final export agree even when frames render out of order.
+
+Check one intermediate chart state or process branch as well as scene endpoints. A correct first and last frame can hide a misleading transition. Keep motion restrained and make the transcript explain essential changes for readers who cannot follow the animation.
+
 ## Produce and verify
 
 1. Inspect available renderers, fonts, encoders, and speech tools. Choose the smallest pipeline that can produce the requested result in this environment. Do not assume a paid service, GPU, or preinstalled animation library.
