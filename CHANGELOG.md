@@ -6,6 +6,8 @@ User-visible changes to this skill collection. Dates record changes on `main` in
 
 ### Changed
 
+- **`html-explainer`:** Restore static charts and flowcharts by default. Remove the animated-visuals guide; animation now requires an explicit request.
+
 - Skill-specific improvements and review examples are listed in the [per-skill change notes](docs/changes/).
 
 - Reorganize the README around reader goals, with a complete skill catalog, invocation labels, and a shorter installation path.
