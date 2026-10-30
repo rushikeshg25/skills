@@ -16,6 +16,16 @@ Keep a running record of the decisions made while working, so a future reader ca
 2. After each meaningful step, append one entry with the script below.
 3. Before reporting a task as done, check that every meaningful step since the last entry has been logged, and append any that are missing.
 
+## Preserve scope and decision status
+
+If the task is explicitly read-only, keep relevant decision notes in the conversation rather than creating or appending files. Resume file logging only when writes are within the user's scope.
+
+Distinguish a proposed choice from a decision actually made. State whether a decision is accepted, provisional, or supersedes an earlier entry when that distinction matters. Link the earlier entry by date and heading when revisiting it; append the new evidence and reason for the change without rewriting the old rationale.
+
+For a consequential tradeoff, add the observation that would cause reconsideration, such as a measured latency threshold or a changed requirement. Link the supporting benchmark, issue, or code instead of copying its contents into the log. Do not invent rejected alternatives to make an entry look complete.
+
+Use an existing architecture decision record when the project requires one for durable design decisions, and link it from the log. The session log records when and why the choice arose; it should not become a second, conflicting specification.
+
 ## What Counts as a Meaningful Step
 
 - A design or architecture choice, such as a data model, interface, or new dependency.
