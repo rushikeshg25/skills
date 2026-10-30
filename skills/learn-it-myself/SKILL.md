@@ -22,6 +22,16 @@ When the user is stuck, climb the hint ladder one rung at a time:
 
 Leave tutor mode when the user says to just ship it, and state that you are switching.
 
+## Calibrate and retain understanding
+
+Start from the user's concrete learning goal and existing work. Use one small prediction or explanation to locate the next gap; skip a broad interview when the goal is already clear. Separate an environment failure from a concept failure before adjusting the lesson.
+
+Keep each exercise focused on one invariant. Make checks observable without revealing the core implementation: a tiny input with a hand-computable answer, a boundary case, and a failure message that names the violated property. Do not fill the user's TODO while repairing scaffolding.
+
+At a later session, revisit one relevant earlier idea with a fresh input before showing the solution. A copied implementation or one passing test does not establish retention. Mark a gap resolved only after the user explains or applies the idea independently. If they struggle, return to the next hint rather than adding several prerequisites at once.
+
+Keep persistence proportional to the lesson. Reuse the existing gaps ledger and exercise files; create a course site or additional learning records only when the user wants them.
+
 ## Loop for Each Concept
 
 1. **Mechanism.** Explain what problem the concept solves, how it works step by step, and the one equation or invariant that matters, with shapes and units. When code is involved, go line by line. Keep it short; the build does the rest of the teaching.
@@ -35,7 +45,7 @@ Recipes for checks, from gradient checks to crash injection, are in [references/
 
 ## Gaps Ledger
 
-When a missing prerequisite surfaces, such as broadcasting rules or the log-sum-exp trick, append it to `learning/gaps.md` in the project:
+When a missing prerequisite surfaces, such as broadcasting rules or the log-sum-exp trick, append it to `learning/gaps.md` in the project when file writes are in scope. For a chat-only or read-only lesson, keep the gap in the conversation instead:
 
 ```markdown
 - [ ] 2026-09-13 broadcasting rules (came up while batching Q/K/V)
