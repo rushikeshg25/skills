@@ -16,10 +16,18 @@ Infer the audience, learning goal, and scope from the request. Ask only when a m
 
 Choose a short narrative: the core idea, a worked example, and the implications. Pick an interaction that reveals the mechanism, such as changing an input, stepping through a process, or comparing two states. If interaction adds no understanding, use a clear static page instead of decorative controls.
 
+## Choose the visual and its behavior
+
+Use a chart for quantities, a flowchart for decisions and routes, and a sequence diagram for messages over time. State the question beside the visual. Keep chart units, scales, data sources, and flowchart branch conditions visible.
+
+Animation is optional. Use it when requested or when a transition makes a mechanism easier to follow: a changed rate moves a growth curve, or a request advances through a retry flow. Keep static charts static when motion adds no information. For animated charts or flowcharts, read [references/animated-visuals.md](references/animated-visuals.md) before building.
+
+Plan the reading order and one focal visual before styling. Use a small set of CSS variables for colors, spacing, and type so charts, controls, and prose remain consistent. Choose a layout that fits the subject; do not add summary cards or navigation to fill space.
+
 ## Build the page
 
 - For a standalone request, deliver one descriptive `.html` file with inline CSS and JavaScript. Prefer system fonts and inline SVG so it opens locally without a build step or network access. When editing an existing site, follow its stack and conventions instead.
-- Prefer a dark theme. Whenever something is not visible in dark (like any chart,etc) then add a button to toggle dark and light theme
+- Prefer a dark theme unless the user or existing site specifies another theme. Make chart labels, gridlines, and controls legible in dark mode. When a visual needs a light background, add a labelled dark/light toggle and verify both themes. Resolve theme colors before passing them to canvas or chart-library APIs, and redraw on a theme change.
 - Establish a deliberate visual hierarchy with readable type, consistent spacing, restrained color, and a focal visual. Adapt the layout to the subject instead of imposing a dashboard or card grid on every explanation.
 - Keep the key explanation readable before JavaScript runs. Use semantic headings, labelled native controls, visible keyboard focus, and sufficient contrast. Do not encode meaning through color alone.
 - Make controls change the model or explanation, not merely their own appearance. Show units, current values, and how to reset or replay. Define valid input ranges and explain simplifications in simulations.
