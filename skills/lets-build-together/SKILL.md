@@ -25,6 +25,16 @@ For a multi-step or still-fluid build, copy and adapt [assets/build-together-tem
 
 Do not turn every routine choice into a checkpoint. Pause when feedback can still change direction cheaply, especially before committing to a public interface, data model, destructive migration, paid service, or externally visible action.
 
+## Make the feedback decision concrete
+
+Before a slice, name the uncertainty it resolves and the observation that will count as success. Choose the smallest end-to-end example that reaches the behavior; a set of disconnected scaffolds does not answer a product question.
+
+If uncertainty is about the interface or state model, a disposable prototype may be useful. Label its shortcuts and keep its data separate from durable user data. A successful prototype validates the tested idea, not production readiness. Carry the validated decision into the real implementation with the project's normal checks.
+
+At a feedback point, show the runnable result or concrete diff, the relevant check result, and one decision with a recommended next step. Distinguish blocked decisions from reversible work that can continue. If a required answer has not arrived, leave that decision open; silence is not approval.
+
+When feedback changes the goal, revise the current slice and acceptance check before building more. Preserve completed work that still serves the goal and move discarded ideas out of the active plan. Stop once the agreed behavior and checks are complete.
+
 ## Keep the Collaboration Honest
 
 - Distinguish decided requirements from proposals and assumptions.
