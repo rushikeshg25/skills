@@ -44,6 +44,7 @@ See [Getting started](docs/getting-started.md) for full-collection installs, exa
 | --- | --- | --- |
 | [`tell-me-about-this`](skills/tell-me-about-this/SKILL.md) | Produce a linked codebase guide covering runtime flow, architecture, files, and decisions. | User |
 | [`lets-build-together`](skills/lets-build-together/SKILL.md) | Turn an idea into verified increments while staying involved in decisions. | Model or user |
+| [`safe-schema-change`](skills/safe-schema-change/SKILL.md) | Plan compatible database migrations, bounded backfills, and recovery. | Model or user |
 | [`learn-it-myself`](skills/learn-it-myself/SKILL.md) | Learn a concept by implementing the core logic yourself, with tutoring and checks. | Model or user |
 | [`overbuild-check`](skills/overbuild-check/SKILL.md) | Assess an infrastructure plan's need, cost, success measure, and stopping criteria. | Model or user |
 | [`pipeline-forensics`](skills/pipeline-forensics/SKILL.md) | Trace one record across a data pipeline to locate the first incorrect hop. | Model or user |
