@@ -16,10 +16,20 @@ The deliverable is six Markdown files in `docs/project-guide/`. Everything in th
 
 1. **Scope the job.** Find the repository root, its size (`git ls-files | wc -l`), and its languages. Check whether `docs/project-guide/` already exists; if it does, this is an update, so read the existing files first and correct them rather than rewriting from scratch. Ask the user which package to document only when the repo is a monorepo and no single target is obvious.
 2. **Map before reading.** Read the top-level tree, the README, package and build manifests, CI configuration, and any `docker-compose` or deployment files. From these, form an explicit hypothesis about the entry points and the main runtime path.
-3. **Fan out.** Launch 2-4 `Explore` subagents in parallel, one per beat: entry points and the request or command lifecycle; data layer and external integrations; configuration, build, and deployment; tests and conventions. Give each the hypothesis from step 2 and ask for file paths with line anchors rather than prose summaries. Skip the fan-out and read directly when the project is under roughly 50 tracked files.
-4. **Verify the spine yourself.** Read the files the subagents flagged as the main path — entry point, router or dispatcher, core domain module, persistence — before writing the flow document. Subagent findings are leads; the traced path has to be read firsthand.
+3. **Fan out when supported.** If delegation is available and useful for the repository size, launch 2–4 exploration subagents using the host's available tools, one per beat: entry points and the request or command lifecycle; data layer and external integrations; configuration, build, and deployment; tests and conventions. Give each the hypothesis from step 2 and ask for file paths with line anchors rather than prose summaries. Read directly when delegation is unavailable or the project is under roughly 50 tracked files; the same evidence requirements apply.
+4. **Verify the spine yourself.** Read the files identified by your exploration or the subagents as the main path — entry point, router or dispatcher, core domain module, persistence — before writing the flow document. Subagent findings are leads; the traced path has to be read firsthand.
 5. **Write the six files** from the matching section of [assets/project-guide-templates.md](assets/project-guide-templates.md).
 6. **Check the result.** Confirm every cited path exists, every relative link resolves to a real file or heading, every `mermaid` block parses, and the main flow runs start to finish with no unexplained jumps. Unresolved gaps go in `Open questions` in the index, never into a confident sentence.
+
+## Document contracts and the evidence boundary
+
+Record the source revision and any relevant uncommitted changes in the guide index. State which runtime paths were traced and which were not inspected. For an update, start from changed entry points, interfaces, and their callers rather than rewriting unrelated sections.
+
+For each important module, explain what callers must know beyond its function signatures: valid inputs, returned errors, ordering requirements, transaction boundaries, retries, and configuration read at startup versus runtime. Link the implementation and one relevant caller or test. Describe guarantees only when the evidence establishes them.
+
+Trace one representative failure path as well as the successful path. Follow an error or timeout through handling, persistence, and the user-visible result; note where a retry could repeat a side effect. Keep inferred intent separate from observed behavior.
+
+Source inspection establishes code behavior under stated conditions; it does not establish that a deployed service uses that revision or configuration. Label run commands as documented, inspected, or actually executed. Do not start services or access production merely to make the guide sound verified.
 
 ## Output
 
