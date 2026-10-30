@@ -1,0 +1,4 @@
+interface:
+  display_name: "Postgres Query Plan"
+  short_description: "Diagnose slow SQL using plans and measured evidence"
+  default_prompt: "Use $postgres-query-plan to diagnose this slow PostgreSQL query and propose the smallest verified improvement."

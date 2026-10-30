@@ -47,6 +47,7 @@ See [Getting started](docs/getting-started.md) for full-collection installs, exa
 | [`learn-it-myself`](skills/learn-it-myself/SKILL.md) | Learn a concept by implementing the core logic yourself, with tutoring and checks. | Model or user |
 | [`overbuild-check`](skills/overbuild-check/SKILL.md) | Assess an infrastructure plan's need, cost, success measure, and stopping criteria. | Model or user |
 | [`pipeline-forensics`](skills/pipeline-forensics/SKILL.md) | Trace one record across a data pipeline to locate the first incorrect hop. | Model or user |
+| [`postgres-query-plan`](skills/postgres-query-plan/SKILL.md) | Diagnose slow PostgreSQL queries with plan and workload evidence. | Model or user |
 
 ### Explain and visualize
 
