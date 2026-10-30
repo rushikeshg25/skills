@@ -21,6 +21,16 @@ Complex systems are fine when they earn their place. Decide what "earning it" me
 5. **Set one measurable outcome with a date.** Product example: "10 external teams sending logs weekly by 2026-12-01". Learning example: "demo a consumer group rebalance under injected broker failure and explain every log line".
 6. **Write kill criteria and an exit plan.** Decide in advance what stops or pauses the project: a cost ceiling, a missed outcome date, or ops time above a limit. Plan a cheap shutdown that keeps the project's value: export data, tear down infrastructure as code, and keep a README with the architecture, benchmark numbers, a recorded demo, and a local run path (for example Docker Compose) so it stays demoable at zero cost.
 
+## Test whether an alternative really fits
+
+Compare alternatives against the same workload and guarantees. A queue table is not automatically a substitute for a retained event log: check fan-out, replay, ordering, delivery guarantees, backpressure, and retention. A cache proposal must state acceptable staleness and invalidation behavior. A cheaper option that misses a hard requirement is not a viable baseline.
+
+For the most uncertain requirement, identify a small benchmark or failure experiment and the result that would change the verdict. Propose that check when the task is planning-only; run it only when execution is in scope. Record measurements separately from estimates and unknowns.
+
+Include migration effort and the cost of reversing the choice, not only the steady-state bill. Show which assumption dominates the estimate, and how changing it affects the decision. Preserve an explicit learning objective even when the product baseline is simpler.
+
+An exit plan is a proposal, not authorization to shut down services. Preserve durable data, confirm a restorable export, and identify dependencies before any separately authorized teardown.
+
 ## Common Boring Alternatives
 
 | Proposed | Boring alternative | Switch when (measure it) |
