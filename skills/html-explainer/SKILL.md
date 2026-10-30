@@ -20,7 +20,7 @@ Choose a short narrative: the core idea, a worked example, and the implications.
 
 Use a chart for quantities, a flowchart for decisions and routes, and a sequence diagram for messages over time. State the question beside the visual. Keep chart units, scales, data sources, and flowchart branch conditions visible.
 
-Animation is optional. Use it when requested or when a transition makes a mechanism easier to follow: a changed rate moves a growth curve, or a request advances through a retry flow. Keep static charts static when motion adds no information. For animated charts or flowcharts, read [references/animated-visuals.md](references/animated-visuals.md) before building.
+Keep charts and flowcharts static by default. Controls can update values or switch between states immediately, without animated transitions or playback. Add animation only when the user explicitly asks for it.
 
 Plan the reading order and one focal visual before styling. Use a small set of CSS variables for colors, spacing, and type so charts, controls, and prose remain consistent. Choose a layout that fits the subject; do not add summary cards or navigation to fill space.
 

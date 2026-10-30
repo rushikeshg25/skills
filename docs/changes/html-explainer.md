@@ -1,10 +1,10 @@
-# html-explainer: HTML chart and flowchart animation
+# html-explainer: Static charts by default
 
-Status: proposed; available after this skill’s pull request merges.
+The animation guidance introduced in PR #5 is being rolled back after user feedback.
 
-Add optional animated charts and flowcharts with explicit playback state, reduced-motion support, static output, and theme-aware verification.
+Keep charts and flowcharts static unless the user explicitly asks for animation. Controls may update values immediately. Remove the separate animation reference while retaining chart labels, layout guidance, dark-theme support, and accessibility checks.
 
-## Research and adaptation
+## Original research
 
 - [Nico Bailon visual-explainer](https://github.com/nicobailon/visual-explainer/blob/main/plugins/visual-explainer/SKILL.md): figure-first explanations, named process steps, and motion only when it explains change. Keep this repo’s optional motion, portable HTML, and renderer-aware Markdown boundaries instead of adopting its rendering kit.
 - [Anthropic frontend-design](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md): subject-specific layout and motion that responds to an action.
@@ -14,9 +14,9 @@ Retain standalone inline SVG/JavaScript for small explainers instead of adopting
 
 ## Review examples
 
-**Representative request:** Explain compound interest in HTML with an adjustable rate and optional animation.
+**Representative request:** Explain compound interest in HTML with an adjustable rate.
 
-**Expected behavior:** Keep a labelled static chart; transition to the new curve on rate changes; settle immediately with reduced motion. Rapid changes replace pending transitions. Preserve the dark theme and verify chart contrast.
+**Expected behavior:** Keep a labelled static chart. Changing the rate updates the curve immediately, with no animation or playback controls. Preserve the dark theme and verify chart contrast.
 
 **Boundary request:** Explain compound interest in two sentences.
 
