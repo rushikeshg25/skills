@@ -1,0 +1,4 @@
+interface:
+  display_name: "Linux Network Trace"
+  short_description: "Trace Linux DNS, TCP, TLS, and proxy failures"
+  default_prompt: "Use $linux-network-trace to locate the first failing boundary for this connection from the affected Linux host or container."
