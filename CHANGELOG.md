@@ -15,6 +15,7 @@ User-visible changes to this skill collection. Dates record changes on `main` in
 
 ### Added
 
+- **`pr-description`:** Write clear PR and MR descriptions using `easy-understanding`, with concrete examples and evidence-based validation. See the [design notes](docs/changes/pr-description.md).
 - This changelog, with linked historical entries and migration guidance for renamed skills.
 - A getting-started guide with example prompts, installation updates, decision-log setup, and troubleshooting.
 - Contributor guidance and a PR template covering invocation controls, verification, and changelog maintenance.
