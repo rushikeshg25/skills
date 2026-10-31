@@ -56,6 +56,7 @@ See [Getting started](docs/getting-started.md) for full-collection installs, exa
 | Skill | Output | Invocation |
 | --- | --- | --- |
 | [`easy-understanding`](skills/easy-understanding/SKILL.md) | Clear technical prose inspired by ASD-STE100, with meaning and qualifications preserved. | Model or user |
+| [`pr-description`](skills/pr-description/SKILL.md) | Plain-language PR and MR descriptions explaining the change, purpose, and a useful example. | Model or user |
 | [`html-explainer`](skills/html-explainer/SKILL.md) | An HTML page with visuals and interactions that explain a topic. | User |
 | [`add-diagram`](skills/add-diagram/SKILL.md) | A diagram integrated into an existing Markdown or HTML document. | User |
 | [`explainer-video`](skills/explainer-video/SKILL.md) | A rendered video, editable source, transcript, and optional synchronized narration. | User |

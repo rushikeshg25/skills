@@ -1,0 +1,6 @@
+interface:
+  display_name: "PR Description"
+  short_description: "Explain PR changes clearly with useful examples"
+  default_prompt: "Use $pr-description to write a clear PR description from the current diff, using easy-understanding and a small example when helpful."
+policy:
+  allow_implicit_invocation: true
